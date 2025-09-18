@@ -3,7 +3,9 @@
 0. Amplía el tamaño máximo del historial de la shell y configura que cada línea del historial muestre también la fecha y la hora.
 
 ```bash
-
+ export HISTISIZE=10000 # cantidad de comandos
+ export HISTFILESIZE=20000 # tamaño del fichero de almacenamiento
+ export HISTTIMEFORMAT="%F %T "
  
 ```
 
@@ -15,7 +17,13 @@ history
 
 2. Configura estos cambios para que sean permantentes
 ```bash
+ vi ~/.bashrc
 
+#dentro incorporamos esto
+
+export HISTISIZE=10000 # cantidad de comandos
+ export HISTFILESIZE=20000 # tamaño del fichero de almacenamiento
+ export HISTTIMEFORMAT="%F %T "
 ```
 
 ---
@@ -24,27 +32,31 @@ history
 
 1. Muestra toda la información de tu sistema operativo y kernel.
 ```bash
-
+ uname -a
 ```
     
 2. Averigua únicamente la versión del kernel.
 ```bash
-
+ uname -r
 ```
     
 3. Comprueba el espacio en disco disponible.
 ```bash
-
+ df -h
 ```
     
 4. Calcula cuánto espacio ocupa la carpeta `/etc`.
 ```bash
-
+ du -h /etc
+ 
+# buscamos ayuda
+ du --help
+ man du	
 ```
     
 5. Consulta la memoria RAM disponible y usada.
 ```bash
-
+ free -h
 ```
     
 
@@ -54,7 +66,12 @@ history
 
 6. Lanza un monitor de procesos en tiempo real y observa:
 ```bash
-
+ ps aux
+ #o
+ top
+ #o
+ htop
+	total de procesos 20
 ```
     
 - Número total de procesos.
@@ -65,22 +82,30 @@ history
         
 7. Instala y ejecuta una versión mejorada del monitor de procesos y compárala con la anterior.
 ```bash
-
+ sudo aor install htop
+ htop
 ```
     
 8. Obtén un listado de todos los procesos del sistema y localiza el proceso de tu shell.
 ```bash
+ px -lax
 
+ # -l listado
+ # -a ocultos
+ # -x procesos del user actual
+
+ #localizar
+ ps -lax | greep tty
 ```
     
 9. Muestra la jerarquía de procesos en forma de árbol.
 ```bash
-
+ pstree
 ```
     
 10. Lanza el comando `ping` contra `google.com` en segundo plano (&) y obtén su identificador de proceso (PID).
 ```bash
-
+ ping google.com
 ```
     
 11. Finaliza el proceso de Firefox usando su PID.
