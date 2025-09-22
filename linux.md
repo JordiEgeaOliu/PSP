@@ -105,17 +105,19 @@ export HISTISIZE=10000 # cantidad de comandos
     
 10. Lanza el comando `ping` contra `google.com` en segundo plano (&) y obtén su identificador de proceso (PID).
 ```bash
- ping google.com
+ ping google.com &
+ ps aux | grep ping
+ ps aux | head -n1
 ```
     
 11. Finaliza el proceso de Firefox usando su PID.
 ```bash
-
+ kill -9 1079 (el PID del proceso)
 ```
     
 12. Vuelve a lanzarlo y esta vez deténlo, luego reactívalo.
 ```bash
-
+ 
 ```
     
 13. Crea un script que capture la señal de interrupción (Ctrl+C) y muestre un mensaje en lugar de cerrarse.
@@ -215,7 +217,7 @@ export HISTISIZE=10000 # cantidad de comandos
 
 28. Crea una tubería con nombre llamada `cola`.
 ```bash
-
+ mkfifo cola6
 ```
     
 29. Desde una terminal, deja el archivo `cola` en espera de datos. Desde otra terminal, escribe un mensaje en esa tubería.
