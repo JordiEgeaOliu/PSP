@@ -117,14 +117,16 @@ export HISTISIZE=10000 # cantidad de comandos
     
 12. Vuelve a lanzarlo y esta vez deténlo, luego reactívalo.
 ```bash
- 
+ ping google.com
+ (en otra pestana de terminal) kill -19 PID
+ kill -18 PID
 ```
     
 13. Crea un script que capture la señal de interrupción (Ctrl+C) y muestre un mensaje en lugar de cerrarse.
 ```bash
 
 ```
-    
+    pendientes...
 
 ---
 
@@ -132,19 +134,19 @@ export HISTISIZE=10000 # cantidad de comandos
 
 14. Consulta el estado del servicio de conexión remota (por ejemplo, `ssh`).
 ```bash
-
+ ssh
 ```
     
 15. Inicia dicho servicio si está instalado.
 ```bash
-
+ sudo systemctl start ssh
 ```
     
 16. Desactívalo del arranque automático y vuelve a activarlo.
 ```bash
-
+ sudo systemctl disable ssh
 ```
-    
+    sudo systemctl enable ssh
 
 ---
 
